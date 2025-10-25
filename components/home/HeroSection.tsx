@@ -2,11 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export default function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
   const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+  const [count, setCount] = useState(0);
+  const counterRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +18,26 @@ export default function HeroSection() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Animated counter effect
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const interval = setInterval(() => {
+        setCount(prev => {
+          if (prev < 30) {
+            return prev + 1;
+          } else {
+            clearInterval(interval);
+            return 30;
+          }
+        });
+      }, 50); // Increment every 50ms for smooth continuous animation
+
+      return () => clearInterval(interval);
+    }, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const scrollToNext = () => {
@@ -64,8 +86,68 @@ export default function HeroSection() {
         quality that stands the test of time
           </motion.p>
         </div>
-        <div className="lg:col-span-1">
-          {/* Add content for the right column here */}
+        <div className="lg:col-span-1 flex items-center justify-center">
+          <motion.div
+            ref={counterRef}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.8, ease: 'easeOut' }}
+            className="text-center lg:text-right"
+          >
+            <div className="relative inline-block">
+              {/* Decorative background glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-orange-600/20 blur-3xl rounded-full" />
+
+              {/* Main counter display */}
+              <div className="relative">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1 }}
+                  className="text-8xl sm:text-9xl lg:text-[10rem] font-black leading-none"
+                  style={{
+                    background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    textShadow: '0 0 40px rgba(245, 158, 11, 0.3)',
+                  }}
+                >
+                  {count}
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                  className="mt-4 space-y-1"
+                >
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-wider">
+                    YEARS OF
+                  </div>
+                  <div
+                    className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-wider"
+                    style={{
+                      background: 'linear-gradient(135deg, #ffffff 0%, #f59e0b 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                    }}
+                  >
+                    EVOLUTION
+                  </div>
+                </motion.div>
+
+                {/* Decorative line */}
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.8, delay: 1.4 }}
+                  className="mt-6 h-1 bg-gradient-to-r from-amber-500 to-orange-600 origin-left"
+                />
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
