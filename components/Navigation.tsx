@@ -64,14 +64,26 @@ export default function Navigation() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 lg:h-20">
-            <Link
-              href="/"
-              className={`text-xl sm:text-2xl font-bold tracking-tight transition-colors duration-300 ${
-                hasScrolled ? 'text-gray-900' : 'text-white'
-              }`}
-            >
-              Charutha
-            </Link>
+            <div className="flex items-center space-x-3">
+              <Link
+                href="/"
+                className={`text-xl sm:text-2xl font-bold tracking-tight transition-colors duration-300 ${
+                  hasScrolled ? 'text-gray-900' : 'text-white'
+                }`}
+              >
+                Charutha
+              </Link>
+              <div className="hidden sm:flex items-center">
+                <div className={`h-6 w-px mx-3 ${hasScrolled ? 'bg-gray-300' : 'bg-white/30'}`} />
+                <span
+                  className={`text-xs font-semibold tracking-wider transition-colors duration-300 ${
+                    hasScrolled ? 'text-amber-600' : 'text-amber-400'
+                  }`}
+                >
+                  EST. 1995
+                </span>
+              </div>
+            </div>
 
             <div className="hidden lg:flex items-center space-x-8">
               {navLinks.map((link) => (
