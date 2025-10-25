@@ -84,11 +84,49 @@ export default function ContactPage() {
           >
             Ready to start your next construction project? Get in touch with our team today
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mt-8 inline-block"
+          >
+            <div className="px-6 py-3 bg-gradient-to-r from-amber-500/20 to-orange-600/20 backdrop-blur-sm rounded-full border border-amber-500/30">
+              <p className="text-white font-bold text-lg sm:text-xl">
+                <span className="text-amber-400">Est. 1995</span> | Building Legacies Since 1995
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Credibility headline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
+              style={{
+                fontFamily: 'var(--font-playfair)',
+                background: 'linear-gradient(135deg, #1f2937 0%, #f59e0b 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              Put 30 Years of Construction Expertise to Work for You
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Three decades of craftsmanship, one foundation of trust
+            </p>
+          </motion.div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
               ref={formRef}
