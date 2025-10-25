@@ -224,9 +224,14 @@ export default function Footer() {
           className="border-t border-gray-800/50 pt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm text-center md:text-left">
-              &copy; {new Date().getFullYear()} Charutha Construction. All rights reserved.
-            </p>
+            <div className="text-center md:text-left">
+              <p className="text-gray-400 text-sm">
+                &copy; 1995 - 2025 Charutha Construction. Crafting Excellence Since Day One.
+              </p>
+              <p className="text-gray-500 text-xs mt-1">
+                Building Dreams. Delivering Excellence. Creating Legacy.
+              </p>
+            </div>
             
             {/* Legal Links */}
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
