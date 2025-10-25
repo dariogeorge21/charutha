@@ -26,17 +26,17 @@ export default function ServicesHero() {
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 group-hover:scale-105 transition-transform duration-700 ease-out"
         style={{
           transform: `scale(${1 + scrollY * 0.1})`,
           willChange: 'transform',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40 z-10 group-hover:from-black/50 group-hover:to-black/30 transition-all duration-700" />
         <img
           src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920"
           alt="Construction services"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-110 group-hover:scale-115 transition-transform duration-700 ease-out"
         />
       </div>
 
