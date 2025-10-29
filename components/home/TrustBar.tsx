@@ -62,10 +62,10 @@ function AnimatedStat({ icon, value, suffix, label, delay }: StatProps) {
           {icon}
         </div>
       </div>
-      <div className="text-4xl sm:text-5xl font-black text-gray-900 mb-2">
+      <div className="text-4xl sm:text-5xl font-black mb-2">
         <span
           style={{
-            background: 'linear-gradient(135deg, #1f2937 0%, #f59e0b 100%)',
+            background: 'linear-gradient(135deg, #ffffff 0%, #f59e0b 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
@@ -74,7 +74,7 @@ function AnimatedStat({ icon, value, suffix, label, delay }: StatProps) {
           {count}{suffix}
         </span>
       </div>
-      <div className="text-sm sm:text-base font-semibold text-gray-600 uppercase tracking-wide">
+      <div className="text-sm sm:text-base font-semibold text-gray-300 uppercase tracking-wide">
         {label}
       </div>
     </motion.div>
@@ -110,7 +110,7 @@ export default function TrustBar() {
   ];
 
   return (
-    <section className="relative py-16 sm:py-20 bg-gradient-to-br from-gray-50 via-white to-amber-50/30 overflow-hidden">
+    <section className="relative py-16 sm:py-20 bg-gradient-to-br from-black via-gray-900 to-amber-950/30 overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
@@ -127,12 +127,12 @@ export default function TrustBar() {
           className="text-center mb-12"
         >
           <h2 
-            className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3"
+            className="text-3xl sm:text-4xl font-bold text-white mb-3"
             style={{ fontFamily: 'var(--font-playfair)' }}
           >
             Building Trust Since 1995
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Three decades of craftsmanship, one foundation of trust
           </p>
         </motion.div>
