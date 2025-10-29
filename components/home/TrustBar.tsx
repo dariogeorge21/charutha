@@ -83,6 +83,23 @@ function AnimatedStat({ icon, value, suffix, label, delay }: StatProps) {
 }
 
 export default function TrustBar() {
+  const ref = useRef(null);
+  const [scrollY, setScrollY] = useState(0);
+
+  // Parallax and zoom scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (ref.current) {
+        const rect = (ref.current as HTMLElement).getBoundingClientRect();
+        const scrollProgress = Math.max(0, Math.min(1, 1 - rect.top / window.innerHeight));
+        setScrollY(scrollProgress);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const stats = [
     {
       icon: <Award size={32} />,
@@ -111,9 +128,15 @@ export default function TrustBar() {
   ];
 
   return (
-    <section className="relative py-16 sm:py-20 overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+    <section ref={ref} className="relative py-16 sm:py-20 overflow-hidden">
+      {/* Background Image with Parallax and Zoom */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          transform: `scale(${1 + scrollY * 0.1})`,
+          willChange: 'transform',
+        }}
+      >
         <img
           src="https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg"
           alt="Construction background"

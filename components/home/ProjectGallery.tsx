@@ -80,8 +80,14 @@ export default function ProjectGallery() {
 			className="relative py-16 lg:py-24 overflow-hidden"
 			onMouseMove={handleMouseMove}
 		>
-			{/* Background Image */}
-			<div className="absolute inset-0 z-0">
+			{/* Background Image with Parallax and Zoom */}
+			<div
+				className="absolute inset-0 z-0"
+				style={{
+					transform: `scale(${1 + scrollY * 0.1})`,
+					willChange: 'transform',
+				}}
+			>
 				<img
 					src="https://images.pexels.com/photos/443378/pexels-photo-443378.jpeg"
 					alt="Projects background"

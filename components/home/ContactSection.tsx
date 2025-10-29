@@ -1,18 +1,39 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 export default function ContactSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [scrollY, setScrollY] = useState(0);
+
+  // Parallax and zoom scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (ref.current) {
+        const rect = (ref.current as HTMLElement).getBoundingClientRect();
+        const scrollProgress = Math.max(0, Math.min(1, 1 - rect.top / window.innerHeight));
+        setScrollY(scrollProgress);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <section ref={ref} className="relative py-12 lg:py-24 overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image with Parallax and Zoom */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          transform: `scale(${1 + scrollY * 0.1})`,
+          willChange: 'transform',
+        }}
+      >
         <img
           src="https://images.pexels.com/photos/544965/pexels-photo-544965.jpeg"
           alt="Contact background"

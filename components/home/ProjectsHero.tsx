@@ -28,7 +28,7 @@ export default function ProjectsHero() {
       <div
         className="absolute inset-0 z-0"
         style={{
-          transform: `translateY(${scrollY * 100}px)`,
+          transform: `scale(${1 + scrollY * 0.1})`,
           willChange: 'transform',
         }}
       >
@@ -36,7 +36,7 @@ export default function ProjectsHero() {
         <img
           src="https://images.pexels.com/photos/51325/industry-sunset-port-facility-mood-51325.jpeg?auto=compress&cs=tinysrgb&w=1920"
           alt="Construction projects"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-110"
         />
       </div>
 
