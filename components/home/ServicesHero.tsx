@@ -34,7 +34,7 @@ export default function ServicesHero() {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40 z-10 group-hover:from-black/50 group-hover:to-black/30 transition-all duration-700" />
         <img
-          src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          src="https://images.pexels.com/photos/1579356/pexels-photo-1579356.jpeg?auto=compress&cs=tinysrgb&w=1920"
           alt="Construction services"
           className="w-full h-full object-cover scale-110 group-hover:scale-115 transition-transform duration-700 ease-out"
         />
