@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import {
   Briefcase,
   MapPin,
@@ -100,15 +100,40 @@ export default function CareersPage() {
   const benefitsInView = useInView(benefitsRef, { once: true, margin: '-100px' });
   const positionsInView = useInView(positionsRef, { once: true, margin: '-100px' });
 
+  const [heroScrollY, setHeroScrollY] = useState(0);
+  const [cultureScrollY, setCultureScrollY] = useState(0);
+
+  // Hero section parallax effect (like landing page HeroSection)
+  useEffect(() => {
+    const handleScroll = () => {
+      setHeroScrollY(window.scrollY);
+
+      if (cultureRef.current) {
+        const rect = (cultureRef.current as HTMLElement).getBoundingClientRect();
+        const scrollProgress = Math.max(0, Math.min(1, 1 - rect.top / window.innerHeight));
+        setCultureScrollY(scrollProgress);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <main>
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            transform: `translateY(${heroScrollY * 0.5}px)`,
+            willChange: 'transform',
+          }}
+        >
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
             src="https://images.pexels.com/photos/3862627/pexels-photo-3862627.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="Careers at Charutha"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-110"
           />
         </div>
 
@@ -134,7 +159,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section ref={cultureRef} className="py-20 lg:py-32 bg-white">
+      <section ref={cultureRef} className="py-20 lg:py-32 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -167,11 +192,20 @@ export default function CareersPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden"
             >
-              <img
-                src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Our team"
-                className="w-full h-full object-cover"
-              />
+              <div
+                style={{
+                  transform: `scale(${1 + cultureScrollY * 0.1})`,
+                  willChange: 'transform',
+                  transition: 'transform 0.1s ease-out',
+                }}
+                className="w-full h-full"
+              >
+                <img
+                  src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Our team"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </motion.div>
           </div>
         </div>

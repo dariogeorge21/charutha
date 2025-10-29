@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import {
   Building2,
   Home,
@@ -108,10 +108,39 @@ export default function ServicesPage() {
   const processInView = useInView(processRef, { once: true, margin: '-100px' });
   const ctaInView = useInView(ctaRef, { once: true, margin: '-100px' });
 
+  const [heroScrollY, setHeroScrollY] = useState(0);
+  const [processScrollY, setProcessScrollY] = useState(0);
+
+  // Scroll effects for hero and process sections
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const heroRect = (heroRef.current as HTMLElement).getBoundingClientRect();
+        const heroProgress = Math.max(0, Math.min(1, 1 - heroRect.top / window.innerHeight));
+        setHeroScrollY(heroProgress);
+      }
+
+      if (processRef.current) {
+        const processRect = (processRef.current as HTMLElement).getBoundingClientRect();
+        const processProgress = Math.max(0, Math.min(1, 1 - processRect.top / window.innerHeight));
+        setProcessScrollY(processProgress);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <main>
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            transform: `scale(${1 + heroScrollY * 0.1})`,
+            willChange: 'transform',
+          }}
+        >
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
             src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1920"
@@ -193,8 +222,19 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section ref={processRef} className="py-20 lg:py-32 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={processRef} className="relative py-20 lg:py-32 bg-gray-900 text-white overflow-hidden">
+        {/* Background with subtle zoom effect */}
+        <div
+          className="absolute inset-0 z-0 opacity-10"
+          style={{
+            transform: `scale(${1 + processScrollY * 0.1})`,
+            willChange: 'transform',
+          }}
+        >
+          <div className="w-full h-full bg-gradient-to-br from-amber-500 to-orange-600" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={processInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}

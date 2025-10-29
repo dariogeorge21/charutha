@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Award, Users, Target, TrendingUp } from 'lucide-react';
 import Footer from '@/components/Footer';
 
@@ -62,10 +62,32 @@ export default function AboutPage() {
   const valuesInView = useInView(valuesRef, { once: true, margin: '-100px' });
   const teamInView = useInView(teamRef, { once: true, margin: '-100px' });
 
+  const [heroScrollY, setHeroScrollY] = useState(0);
+
+  // Hero section scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const rect = (heroRef.current as HTMLElement).getBoundingClientRect();
+        const scrollProgress = Math.max(0, Math.min(1, 1 - rect.top / window.innerHeight));
+        setHeroScrollY(scrollProgress);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <main>
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            transform: `scale(${1 + heroScrollY * 0.1})`,
+            willChange: 'transform',
+          }}
+        >
           <div className="absolute inset-0 bg-black/50 z-10" />
           <img
             src="https://images.pexels.com/photos/3862627/pexels-photo-3862627.jpeg?auto=compress&cs=tinysrgb&w=1920"

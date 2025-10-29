@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Footer from '@/components/Footer';
 
 const categories = ['All', 'Commercial', 'Residential', 'Infrastructure', 'Industrial'];
@@ -100,6 +100,29 @@ export default function ProjectsPage() {
   const filterInView = useInView(filterRef, { once: true });
   const projectsInView = useInView(projectsRef, { once: true, margin: '-50px' });
 
+  const [heroScrollY, setHeroScrollY] = useState(0);
+  const [projectsScrollY, setProjectsScrollY] = useState(0);
+
+  // Scroll effects for hero and projects sections
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const heroRect = (heroRef.current as HTMLElement).getBoundingClientRect();
+        const heroProgress = Math.max(0, Math.min(1, 1 - heroRect.top / window.innerHeight));
+        setHeroScrollY(heroProgress);
+      }
+
+      if (projectsRef.current) {
+        const projectsRect = (projectsRef.current as HTMLElement).getBoundingClientRect();
+        const projectsProgress = Math.max(0, Math.min(1, 1 - projectsRect.top / window.innerHeight));
+        setProjectsScrollY(projectsProgress);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const filteredProjects =
     selectedCategory === 'All'
       ? projects
@@ -108,7 +131,13 @@ export default function ProjectsPage() {
   return (
     <main>
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            transform: `scale(${1 + heroScrollY * 0.1})`,
+            willChange: 'transform',
+          }}
+        >
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
             src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1920"
@@ -164,8 +193,19 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section ref={projectsRef} className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={projectsRef} className="relative py-20 bg-gray-50 overflow-hidden">
+        {/* Background with zoom effect */}
+        <div
+          className="absolute inset-0 z-0 opacity-5"
+          style={{
+            transform: `scale(${1 + projectsScrollY * 0.1})`,
+            willChange: 'transform',
+          }}
+        >
+          <div className="w-full h-full bg-gradient-to-br from-gray-900 to-gray-700" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
               <motion.div

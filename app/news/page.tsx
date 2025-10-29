@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Calendar, Clock } from 'lucide-react';
 import Footer from '@/components/Footer';
 
@@ -75,15 +75,33 @@ export default function NewsPage() {
   const heroInView = useInView(heroRef, { once: true });
   const articlesInView = useInView(articlesRef, { once: true, margin: '-100px' });
 
+  const [heroScrollY, setHeroScrollY] = useState(0);
+
+  // Hero section parallax effect (like landing page HeroSection)
+  useEffect(() => {
+    const handleScroll = () => {
+      setHeroScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <main>
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            transform: `translateY(${heroScrollY * 0.5}px)`,
+            willChange: 'transform',
+          }}
+        >
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
             src="https://images.pexels.com/photos/3862627/pexels-photo-3862627.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="News and updates"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-110"
           />
         </div>
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import Footer from '@/components/Footer';
 
@@ -13,6 +13,22 @@ export default function ContactPage() {
   const heroInView = useInView(heroRef, { once: true });
   const formInView = useInView(formRef, { once: true, margin: '-100px' });
   const infoInView = useInView(infoRef, { once: true, margin: '-100px' });
+
+  const [heroScrollY, setHeroScrollY] = useState(0);
+
+  // Hero section scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const rect = (heroRef.current as HTMLElement).getBoundingClientRect();
+        const scrollProgress = Math.max(0, Math.min(1, 1 - rect.top / window.innerHeight));
+        setHeroScrollY(scrollProgress);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -56,7 +72,13 @@ export default function ContactPage() {
   return (
     <main>
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            transform: `scale(${1 + heroScrollY * 0.1})`,
+            willChange: 'transform',
+          }}
+        >
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
             src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1920"
