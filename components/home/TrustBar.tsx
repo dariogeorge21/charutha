@@ -62,19 +62,20 @@ function AnimatedStat({ icon, value, suffix, label, delay }: StatProps) {
           {icon}
         </div>
       </div>
-      <div className="text-4xl sm:text-5xl font-black mb-2">
+      <div className="text-4xl sm:text-5xl font-black text-white mb-2">
         <span
           style={{
-            background: 'linear-gradient(135deg, #ffffff 0%, #f59e0b 100%)',
+            background: 'linear-gradient(135deg, #000000 0%, #f59e0b 5%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
+            color: 'white',
           }}
         >
           {count}{suffix}
         </span>
       </div>
-      <div className="text-sm sm:text-base font-semibold text-gray-300 uppercase tracking-wide">
+      <div className="text-sm sm:text-base font-semibold text-gray-400 uppercase tracking-wide">
         {label}
       </div>
     </motion.div>
@@ -132,7 +133,7 @@ export default function TrustBar() {
           >
             Building Trust Since 1995
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             Three decades of craftsmanship, one foundation of trust
           </p>
         </motion.div>
