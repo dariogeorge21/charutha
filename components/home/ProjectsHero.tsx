@@ -32,7 +32,7 @@ export default function ProjectsHero() {
           willChange: 'transform',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/60 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/60 z-10 -mt-10" />
         <img
           src="https://images.pexels.com/photos/51325/industry-sunset-port-facility-mood-51325.jpeg?auto=compress&cs=tinysrgb&w=1920"
           alt="Construction projects"
