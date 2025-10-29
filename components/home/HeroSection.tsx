@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { useEffect, useState, useRef } from 'react';
+import SubHeader from '../SubHeader';
 
 export default function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
@@ -49,6 +50,7 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+      
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -62,6 +64,10 @@ export default function HeroSection() {
           alt="Construction site"
           className="w-full h-full object-cover scale-110"
         />
+      </div>
+
+      <div className="absolute top-8 left-8 z-20">
+        <SubHeader />
       </div>
 
       <div className="relative z-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
@@ -95,23 +101,13 @@ export default function HeroSection() {
             className="text-center lg:text-right"
           >
             <div className="relative inline-block">
-              {/* Decorative background glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-orange-600/20 blur-3xl rounded-full" />
-
               {/* Main counter display */}
               <div className="relative">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 1 }}
-                  className="text-8xl sm:text-9xl lg:text-[10rem] font-black leading-none"
-                  style={{
-                    background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                    textShadow: '0 0 40px rgba(245, 158, 11, 0.3)',
-                  }}
+                  className="text-8xl sm:text-9xl lg:text-[10rem] font-black leading-none text-amber-500 tracking-tight"
                 >
                   {count}
                 </motion.div>
@@ -125,15 +121,7 @@ export default function HeroSection() {
                   <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-wider">
                     YEARS OF
                   </div>
-                  <div
-                    className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-wider"
-                    style={{
-                      background: 'linear-gradient(135deg, #ffffff 0%, #f59e0b 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                    }}
-                  >
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-wider">
                     EVOLUTION
                   </div>
                 </motion.div>
