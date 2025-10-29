@@ -10,7 +10,7 @@ export default function ContactSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="py-20 lg:py-32 bg-gray-50">
+    <section ref={ref} className="py-12 lg:py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -40,7 +40,7 @@ export default function ContactSection() {
         >
           <Link
             href="/contact"
-            className="inline-flex items-center space-x-4 bg-gray-900 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:shadow-xl group"
+            className="inline-flex items-center space-x-4 bg-black text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:shadow-xl group"
           >
             <span>Get In Touch</span>
             <ArrowRight
