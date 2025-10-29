@@ -111,14 +111,25 @@ export default function TrustBar() {
   ];
 
   return (
-    <section className="relative py-16 sm:py-20 bg-gradient-to-br from-black via-gray-900 to-amber-950/30 overflow-hidden">
+    <section className="relative py-16 sm:py-20 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg"
+          alt="Construction background"
+          className="w-full h-full object-cover opacity-30"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-gray-900/90 to-black/85" />
+      </div>
+
       {/* Decorative background elements */}
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-20 z-10">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
