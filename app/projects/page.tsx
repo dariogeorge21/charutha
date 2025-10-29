@@ -140,7 +140,7 @@ export default function ProjectsPage() {
         >
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
-            src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            src="https://images.pexels.com/photos/3680959/pexels-photo-3680959.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="Our projects"
             className="w-full h-full object-cover"
           />
@@ -168,7 +168,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section ref={filterRef} className="py-12 bg-white sticky top-16 lg:top-20 z-30 shadow-md">
+      <section ref={filterRef} className="py-12 bg-white relative top-16 lg:top-20 z-30 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
