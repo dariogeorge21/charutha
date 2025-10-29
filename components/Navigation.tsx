@@ -58,7 +58,7 @@ export default function Navigation() {
         transition={{ duration: 0.3, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           hasScrolled
-            ? 'bg-white/90 backdrop-blur-md shadow-md'
+            ? 'bg-black/90 backdrop-blur-md shadow-md'
             : 'bg-transparent'
         }`}
       >
@@ -78,7 +78,7 @@ export default function Navigation() {
                   <span
                     className={`absolute -bottom-1 left-0 h-0.5 transition-all duration-300 ${
                       pathname === link.href
-                        ? 'w-full bg-gray-900'
+                        ? 'w-full bg-black'
                         : 'w-0 group-hover:w-full bg-black'
                     }`}
                   />
