@@ -27,7 +27,7 @@ export default function Navigation() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      setHasScrolled(currentScrollY > 50);
+      setHasScrolled(currentScrollY > 1500);
 
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
@@ -62,35 +62,15 @@ export default function Navigation() {
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 lg:h-20">
-            <div className="flex items-center space-x-3">
-              <Link
-                href="/"
-                className={`text-xl sm:text-2xl font-bold tracking-tight transition-colors duration-300 ${
-                  hasScrolled ? 'text-gray-900' : 'text-white'
-                }`}
-              >
-                Charutha
-              </Link>
-              <div className="hidden sm:flex items-center">
-                <div className={`h-6 w-px mx-3 ${hasScrolled ? 'bg-gray-300' : 'bg-white/30'}`} />
-                <span
-                  className={`text-xs font-semibold tracking-wider transition-colors duration-300 ${
-                    hasScrolled ? 'text-amber-600' : 'text-amber-400'
-                  }`}
-                >
-                  EST. 1995
-                </span>
-              </div>
-            </div>
-
-            <div className="hidden lg:flex items-center space-x-8">
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-end h-16 lg:h-20">
+            <div></div>
+            <div className="hidden lg:flex items-center space-x-12">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative text-sm font-medium transition-colors duration-300 group ${
+                  className={`relative text-m font-medium transition-colors duration-300 group ${
                     hasScrolled ? 'text-gray-700' : 'text-white'
                   } ${pathname === link.href ? 'font-semibold' : ''}`}
                 >
@@ -99,12 +79,13 @@ export default function Navigation() {
                     className={`absolute -bottom-1 left-0 h-0.5 transition-all duration-300 ${
                       pathname === link.href
                         ? 'w-full bg-gray-900'
-                        : 'w-0 group-hover:w-full bg-gray-600'
+                        : 'w-0 group-hover:w-full bg-black'
                     }`}
                   />
                 </Link>
               ))}
             </div>
+
 
             <button
               onClick={() => setIsOpen(!isOpen)}
