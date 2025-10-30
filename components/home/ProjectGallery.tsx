@@ -88,9 +88,13 @@ export default function ProjectGallery() {
 					willChange: 'transform',
 				}}
 			>
-				<img
-					src="https://images.pexels.com/photos/443378/pexels-photo-443378.jpeg"
-					alt="Projects background"
+				<video
+					autoPlay
+					loop
+					muted
+					playsInline
+					src="https://www.pexels.com/download/video/1197802/?auto=compress&cs=tinysrgb&w=1920"
+					title="Projects background"
 					className="w-full h-full object-cover opacity-15"
 				/>
 				{/* Warm overlay for text readability */}

@@ -34,9 +34,13 @@ export default function ContactSection() {
           willChange: 'transform',
         }}
       >
-        <img
-          src="https://images.pexels.com/photos/544965/pexels-photo-544965.jpeg"
-          alt="Contact background"
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          src="https://www.pexels.com/download/video/6474149/?auto=compress&cs=tinysrgb&w=1920"
+          title="Contact background"
           className="w-full h-full object-cover opacity-30"
         />
         {/* Warm overlay */}

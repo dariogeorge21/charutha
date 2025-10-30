@@ -64,7 +64,7 @@ export default function HeroSection() {
           loop
           muted
           playsInline
-          src="https://www.pexels.com/download/video/1197802/?auto=compress&cs=tinysrgb&w=1920"
+          src="https://www.pexels.com/download/video/2835995/?auto=compress&cs=tinysrgb&w=1920"
           title="Construction site"
           className="w-full h-full object-cover scale-110"
         />
@@ -142,7 +142,7 @@ export default function HeroSection() {
                     letterSpacing: '0.02em'
                   }}
                 >
-                  <span className="relative inline-block animate-pulse-slow">
+                  <span className="relative inline-block animate-pulse-slow text-amber-500">
                     {count}
                   </span>
                   {/* Subtle glow behind number */}
