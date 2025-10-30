@@ -71,6 +71,14 @@
   html {
     scroll-behavior: smooth;
     background-color: #000000;
+    scroll-padding-top: 80px; /* Account for fixed header */
+  }
+
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
