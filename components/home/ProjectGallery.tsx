@@ -77,7 +77,7 @@ export default function ProjectGallery() {
 	return (
 		<section
 			ref={ref}
-			className="relative py-16 lg:py-24 overflow-hidden"
+			className="relative py-32 lg:py-40 overflow-hidden bg-italian-off-white"
 			onMouseMove={handleMouseMove}
 		>
 			{/* Background Image with Parallax and Zoom */}
@@ -91,29 +91,29 @@ export default function ProjectGallery() {
 				<img
 					src="https://images.pexels.com/photos/443378/pexels-photo-443378.jpeg"
 					alt="Projects background"
-					className="w-full h-full object-cover opacity-25"
+					className="w-full h-full object-cover opacity-15"
 				/>
-				{/* Dark overlay for text readability */}
-				<div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/85 to-black/90" />
+				{/* Warm overlay for text readability */}
+				<div className="absolute inset-0 bg-gradient-to-br from-italian-cream/95 via-italian-beige/90 to-italian-off-white/95" />
 			</div>
 
 			{/* Subtle Geometric Pattern Overlay */}
 			<div
-				className="absolute inset-0 opacity-[0.02] z-10"
+				className="absolute inset-0 opacity-[0.03] z-10"
 				style={{
-					backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+					backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23483C32' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
 				}}
 			/>
 
 			{/* Animated Gradient Orbs */}
 			<div
-				className="absolute top-1/4 -left-48 w-96 h-96 bg-gradient-to-br from-amber-500/10 to-orange-500/10 rounded-full blur-3xl z-10 transition-transform duration-1000"
+				className="absolute top-1/4 -left-48 w-96 h-96 bg-gradient-to-br from-italian-terracotta/10 to-italian-ochre/10 rounded-full blur-3xl z-10 transition-transform duration-1000"
 				style={{
 					transform: `translate(${scrollY * 50}px, ${scrollY * -30}px)`,
 				}}
 			/>
 			<div
-				className="absolute bottom-1/4 -right-48 w-96 h-96 bg-gradient-to-br from-amber-500/10 to-orange-500/10 rounded-full blur-3xl z-10 transition-transform duration-1000"
+				className="absolute bottom-1/4 -right-48 w-96 h-96 bg-gradient-to-br from-italian-terracotta/10 to-italian-ochre/10 rounded-full blur-3xl z-10 transition-transform duration-1000"
 				style={{
 					transform: `translate(${scrollY * -50}px, ${scrollY * 30}px)`,
 				}}
@@ -121,13 +121,13 @@ export default function ProjectGallery() {
 
 			<div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-30">
 				{/* Header Section with Enhanced Animations */}
-				<div className="text-center mb-16 lg:mb-20">
+				<div className="text-center mb-20 lg:mb-24">
 					<motion.h2
 						initial={{ opacity: 0, y: 30 }}
 						animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
 						transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
-						className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-br from-white via-gray-100 to-amber-100 bg-clip-text text-transparent"
-						style={{ fontFamily: 'var(--font-italiana)' }}
+						className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-wide bg-gradient-to-br from-italian-navy via-italian-taupe to-italian-terracotta bg-clip-text text-transparent"
+						style={{ fontFamily: 'var(--font-italiana)', letterSpacing: '0.02em', lineHeight: '1.3' }}
 					>
 						Featured Projects
 					</motion.h2>
@@ -136,7 +136,8 @@ export default function ProjectGallery() {
 						initial={{ opacity: 0, y: 20 }}
 						animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
 						transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
-						className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+						className="text-xl sm:text-2xl text-italian-taupe max-w-4xl mx-auto"
+						style={{ lineHeight: '1.7' }}
 					>
 						A curated collection of our most prestigious projects, showcasing
 						architectural excellence and innovative construction solutions
@@ -147,7 +148,7 @@ export default function ProjectGallery() {
 						initial={{ scaleX: 0 }}
 						animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
 						transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-						className="mt-8 h-1 w-24 mx-auto bg-gradient-to-r from-transparent via-amber-500 to-transparent origin-center"
+						className="mt-10 h-1 w-32 mx-auto bg-gradient-to-r from-transparent via-italian-terracotta to-transparent origin-center"
 					/>
 				</div>
 
@@ -181,42 +182,42 @@ export default function ProjectGallery() {
 								>
 									{/* Layered Shadow Effect */}
 									<div
-										className={`absolute inset-0 rounded-2xl transition-all duration-500 ${
+										className={`absolute inset-0 rounded-sm transition-all duration-500 ${
 											isHovered
-												? 'shadow-2xl shadow-amber-500/20'
-												: 'shadow-lg shadow-gray-900/10'
+												? 'shadow-2xl shadow-italian-terracotta/20'
+												: 'shadow-md shadow-italian-taupe/10'
 										}`}
 									/>
 
 									{/* Premium Border with Gradient */}
-									<div className={`absolute inset-0 rounded-2xl transition-all duration-500 ${
+									<div className={`absolute inset-0 rounded-sm transition-all duration-500 ${
 										isHovered
-											? 'ring-2 ring-amber-400/50 ring-offset-2 ring-offset-black'
-											: 'ring-1 ring-gray-200/50'
+											? 'ring-2 ring-italian-terracotta/50 ring-offset-2 ring-offset-italian-cream'
+											: 'ring-1 ring-italian-taupe/20'
 									}`} />
 
 									{/* Image Container with Parallax */}
-									<div className="absolute inset-0 overflow-hidden rounded-2xl">
+									<div className="absolute inset-0 overflow-hidden rounded-sm">
 										<motion.img
 											src={project.image}
 											alt={project.title}
 											className="w-full h-full object-cover"
 											animate={{
-												scale: isHovered ? 1.1 : 1,
+												scale: isHovered ? 1.05 : 1,
 											}}
 											transition={{ duration: 0.7, ease: 'easeOut' }}
 										/>
 
 										{/* Multi-layered Gradient Overlays */}
 										<div
-											className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-opacity duration-500 ${
+											className={`absolute inset-0 bg-gradient-to-t from-italian-navy/80 via-italian-taupe/40 to-transparent transition-opacity duration-500 ${
 												isHovered ? 'opacity-90' : 'opacity-70'
 											}`}
 										/>
 
 										{/* Radial Gradient on Hover */}
 										<motion.div
-											className="absolute inset-0 opacity-0 bg-gradient-to-br from-amber-500/30 via-transparent to-purple-500/30"
+											className="absolute inset-0 opacity-0 bg-gradient-to-br from-italian-terracotta/30 via-transparent to-italian-ochre/30"
 											animate={{
 												opacity: isHovered ? 0.3 : 0,
 											}}
@@ -225,7 +226,7 @@ export default function ProjectGallery() {
 									</div>
 
 									{/* Content Container with Glass Morphism */}
-									<div className="absolute inset-0 flex flex-col justify-end p-6 lg:p-8 z-10">
+									<div className="absolute inset-0 flex flex-col justify-end p-8 lg:p-10 z-10">
 										{/* Category Badge with Backdrop Blur */}
 										<motion.div
 											initial={{ opacity: 0, x: -20 }}
@@ -233,17 +234,17 @@ export default function ProjectGallery() {
 												isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
 											}
 											transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-											className="mb-3"
+											className="mb-4"
 										>
-											<span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-lg">
+											<span className="inline-flex items-center px-4 py-2 rounded-sm text-xs font-semibold bg-italian-terracotta/80 backdrop-blur-md border border-italian-cream/20 text-white shadow-lg uppercase tracking-wider">
 												{project.category}
 											</span>
 										</motion.div>
 
 										{/* Title with Smooth Reveal */}
 										<motion.h3
-											className="text-2xl md:text-3xl font-bold text-white mb-3"
-											style={{ fontFamily: 'var(--font-italiana)' }}
+											className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-wide"
+											style={{ fontFamily: 'var(--font-italiana)', letterSpacing: '0.02em' }}
 											animate={{
 												y: isHovered ? -8 : 0,
 											}}
@@ -260,17 +261,17 @@ export default function ProjectGallery() {
 												y: isHovered ? 0 : 10,
 											}}
 											transition={{ duration: 0.3, ease: 'easeOut' }}
-											className="flex items-center space-x-2 text-white"
+											className="flex items-center space-x-3 text-white"
 										>
-											<span className="text-sm font-medium">View Project</span>
-											<div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-white/30 group-hover:scale-110">
-												<ArrowUpRight className="w-4 h-4" />
+											<span className="text-base font-medium tracking-wide">View Project</span>
+											<div className="w-10 h-10 rounded-full bg-italian-terracotta/80 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-italian-terracotta group-hover:scale-110">
+												<ArrowUpRight className="w-5 h-5" />
 											</div>
 										</motion.div>
 
 										{/* Decorative Bottom Line */}
 										<motion.div
-											className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-amber-500 via-orange-500 to-transparent"
+											className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-italian-terracotta via-italian-ochre to-transparent"
 											initial={{ scaleX: 0 }}
 											animate={{
 												scaleX: isHovered ? 1 : 0,
@@ -282,7 +283,7 @@ export default function ProjectGallery() {
 
 									{/* Glow Effect on Hover */}
 									<motion.div
-										className="absolute inset-0 rounded-2xl opacity-0 pointer-events-none"
+										className="absolute inset-0 rounded-sm opacity-0 pointer-events-none"
 										animate={{
 											opacity: isHovered ? 1 : 0,
 										}}
