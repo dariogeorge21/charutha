@@ -1,10 +1,11 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Inter, Italiana } from 'next/font/google';
 import Navigation from '@/components/Navigation';
+import SmoothScroll from '@/components/SmoothScroll';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
+const italiana = Italiana({ weight: '400', subsets: ['latin'], variable: '--font-italiana' });
 
 export const metadata: Metadata = {
   title: 'Charutha - Building Tomorrow\'s Infrastructure',
@@ -17,8 +18,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${inter.variable} ${italiana.variable}`}>
       <body className={inter.className}>
+        <SmoothScroll />
         <Navigation />
         {children}
       </body>
