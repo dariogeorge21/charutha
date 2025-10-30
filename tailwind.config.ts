@@ -60,6 +60,35 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
+        // Italian Color Palette
+        italian: {
+          terracotta: '#E07856',
+          ochre: '#CC7722',
+          sienna: '#E97451',
+          navy: '#000080',
+          cobalt: '#0047AB',
+          cream: '#F5F5DC',
+          beige: '#F5E6D3',
+          taupe: '#483C32',
+          'warm-gray': '#8B8680',
+          'off-white': '#FAFAFA',
+          'forest-green': '#228B22',
+          burgundy: '#800020',
+          mustard: '#FFDB58',
+        },
+      },
+      fontFamily: {
+        heading: ['var(--font-italiana)', 'serif'],
+        body: ['var(--font-inter)', 'sans-serif'],
+      },
+      spacing: {
+        xs: '16px',
+        sm: '24px',
+        md: '32px',
+        lg: '48px',
+        xl: '64px',
+        '2xl': '96px',
+        '3xl': '120px',
       },
       keyframes: {
         'accordion-down': {
