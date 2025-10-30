@@ -4,57 +4,105 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%;
-    --input: 0 0% 15%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    /* Italian Color Palette */
+    --color-primary-terracotta: #E07856;
+    --color-primary-ochre: #CC7722;
+    --color-primary-burnt-sienna: #E97451;
+
+    --color-secondary-navy: #000080;
+    --color-secondary-cobalt: #0047AB;
+
+    --color-neutral-cream: #F5F5DC;
+    --color-neutral-beige: #F5F5DC;
+    --color-neutral-taupe: #483C32;
+    --color-neutral-warm-gray: #8B8680;
+    --color-neutral-off-white: #FAFAFA;
+
+    --color-accent-forest-green: #228B22;
+    --color-accent-burgundy: #800020;
+    --color-accent-mustard: #FFDB58;
+
+    /* Typography - Italiana already configured */
+    --font-heading: var(--font-italiana);
+    --font-body: var(--font-inter);
+
+    /* Spacing System (8px base) */
+    --spacing-unit: 8px;
+    --spacing-xs: 16px;
+    --spacing-sm: 24px;
+    --spacing-md: 32px;
+    --spacing-lg: 48px;
+    --spacing-xl: 64px;
+    --spacing-2xl: 96px;
+    --spacing-3xl: 120px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+
+    /* Border Radius */
+    --radius-sm: 2px;
+    --radius-md: 4px;
+
+    /* Transitions */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Shadcn UI compatibility - updated for Italian theme */
+    --background: 0 0% 98%; /* #FAFAFA off-white */
+    --foreground: 28 25% 25%; /* #483C32 taupe */
+    --card: 43 13% 96%; /* #F5F5DC cream */
+    --card-foreground: 28 25% 25%; /* #483C32 taupe */
+    --popover: 43 13% 96%; /* #F5F5DC cream */
+    --popover-foreground: 28 25% 25%; /* #483C32 taupe */
+    --primary: 16 65% 62%; /* #E07856 terracotta */
+    --primary-foreground: 0 0% 100%; /* white */
+    --secondary: 240 100% 25%; /* #000080 navy */
+    --secondary-foreground: 0 0% 100%; /* white */
+    --muted: 43 13% 90%; /* lighter cream */
+    --muted-foreground: 28 10% 55%; /* #8B8680 warm-gray */
+    --accent: 19 64% 50%; /* #CC7722 ochre */
+    --accent-foreground: 0 0% 100%; /* white */
+    --destructive: 350 100% 25%; /* #800020 burgundy */
+    --destructive-foreground: 0 0% 98%; /* off-white */
+    --border: 28 25% 25% / 0.15; /* taupe with opacity */
+    --input: 28 10% 85%; /* light taupe */
+    --ring: 16 65% 62%; /* terracotta */
+    --chart-1: 16 65% 62%; /* terracotta */
+    --chart-2: 240 100% 25%; /* navy */
+    --chart-3: 120 61% 34%; /* forest green */
+    --chart-4: 48 100% 67%; /* mustard */
+    --chart-5: 19 64% 50%; /* ochre */
+    --radius: 0.25rem;
   }
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    /* Dark mode with Italian palette influence */
+    --background: 28 25% 12%; /* dark taupe */
+    --foreground: 43 13% 96%; /* cream */
+    --card: 28 25% 15%; /* slightly lighter dark taupe */
+    --card-foreground: 43 13% 96%; /* cream */
+    --popover: 28 25% 15%; /* dark taupe */
+    --popover-foreground: 43 13% 96%; /* cream */
+    --primary: 16 65% 62%; /* terracotta */
+    --primary-foreground: 0 0% 98%; /* off-white */
+    --secondary: 240 100% 35%; /* lighter navy for dark mode */
+    --secondary-foreground: 43 13% 96%; /* cream */
+    --muted: 28 25% 20%; /* muted dark taupe */
+    --muted-foreground: 28 10% 65%; /* lighter warm-gray */
+    --accent: 19 64% 55%; /* lighter ochre for dark mode */
+    --accent-foreground: 0 0% 98%; /* off-white */
+    --destructive: 350 100% 35%; /* lighter burgundy */
+    --destructive-foreground: 43 13% 96%; /* cream */
+    --border: 28 25% 25% / 0.3; /* taupe with opacity */
+    --input: 28 25% 20%; /* dark taupe */
+    --ring: 16 65% 62%; /* terracotta */
+    --chart-1: 16 65% 62%; /* terracotta */
+    --chart-2: 240 100% 45%; /* lighter navy */
+    --chart-3: 120 61% 44%; /* lighter forest green */
+    --chart-4: 48 100% 67%; /* mustard */
+    --chart-5: 19 64% 55%; /* lighter ochre */
   }
 }
 
@@ -64,13 +112,14 @@
   }
 
   body {
-    @apply bg-black text-white;
+    @apply bg-[#FAFAFA] text-[#483C32];
     font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: var(--font-body);
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: #000000;
+    background-color: #FAFAFA;
     scroll-padding-top: 80px; /* Account for fixed header */
   }
 
@@ -82,11 +131,15 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    line-height: 1.2;
+    font-family: var(--font-heading);
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    color: var(--color-secondary-navy);
   }
 
   p {
-    line-height: 1.6;
+    line-height: 1.7;
+    color: var(--color-neutral-taupe);
   }
 }
 
@@ -94,41 +147,124 @@
   .text-balance {
     text-wrap: balance;
   }
-  
-  /* Dark theme overrides */
-  .bg-white {
-    @apply bg-black !important;
+
+  /* Italian theme utilities */
+  .bg-italian-cream {
+    background-color: var(--color-neutral-cream);
   }
-  
-  .text-black,
-  .text-gray-900,
-  .text-gray-800,
-  .text-gray-700 {
-    @apply text-white !important;
+
+  .bg-italian-terracotta {
+    background-color: var(--color-primary-terracotta);
   }
-  
-  .text-gray-600,
-  .text-gray-500 {
-    @apply text-gray-300 !important;
+
+  .bg-italian-navy {
+    background-color: var(--color-secondary-navy);
   }
-  
-  .bg-gray-50,
-  .bg-gray-100 {
-    @apply bg-gray-900 !important;
+
+  .text-italian-taupe {
+    color: var(--color-neutral-taupe);
   }
-  
-  .bg-gray-200 {
-    @apply bg-gray-800 !important;
+
+  .text-italian-navy {
+    color: var(--color-secondary-navy);
   }
-  
-  .border-gray-200,
-  .border-gray-300 {
-    @apply border-gray-700 !important;
+
+  .text-italian-terracotta {
+    color: var(--color-primary-terracotta);
   }
-  
-  .shadow-md,
-  .shadow-lg {
-    box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.05), 0 2px 4px -1px rgba(255, 255, 255, 0.03) !important;
+
+  .border-italian-taupe {
+    border-color: var(--color-neutral-taupe);
+  }
+
+  .hover-lift {
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .generous-spacing {
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+  }
+
+  @media (min-width: 1024px) {
+    .generous-spacing {
+      padding-top: var(--spacing-3xl);
+      padding-bottom: var(--spacing-3xl);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s infinite;
+  }
+
+  /* Italian-themed gradient utilities */
+  .italian-gradient-warm {
+    background: linear-gradient(135deg, var(--color-primary-terracotta), var(--color-primary-ochre));
+  }
+
+  .italian-gradient-subtle {
+    background: linear-gradient(180deg, var(--color-neutral-cream), var(--color-neutral-off-white));
+  }
+
+  .italian-gradient-hero {
+    background: linear-gradient(135deg, var(--color-primary-burnt-sienna), var(--color-primary-terracotta));
+  }
+
+  /* Italian shadow utilities */
+  .italian-shadow-soft {
+    box-shadow: 0 4px 20px rgba(224, 120, 86, 0.15);
+  }
+
+  .italian-shadow-warm {
+    box-shadow: 0 8px 30px rgba(204, 119, 34, 0.2);
+  }
+
+  /* Hover effect utilities */
+  .hover-terracotta {
+    transition: color var(--transition-base), background-color var(--transition-base);
+  }
+
+  .hover-terracotta:hover {
+    color: white;
+    background-color: var(--color-primary-terracotta);
+  }
+
+  .hover-navy {
+    transition: color var(--transition-base), background-color var(--transition-base);
+  }
+
+  .hover-navy:hover {
+    color: white;
+    background-color: var(--color-secondary-navy);
+  }
+
+  /* Border utilities with Italian colors */
+  .border-italian-cream {
+    border-color: var(--color-neutral-cream);
+  }
+
+  .border-italian-warm-gray {
+    border-color: var(--color-neutral-warm-gray);
+  }
+
+  /* Focus ring with terracotta */
+  .focus-italian {
+    outline: 2px solid var(--color-primary-terracotta);
+    outline-offset: 2px;
   }
 }
 
