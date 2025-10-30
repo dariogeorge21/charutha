@@ -25,7 +25,7 @@ export default function ContactSection() {
   }, []);
 
   return (
-    <section ref={ref} className="relative py-12 lg:py-24 overflow-hidden">
+    <section ref={ref} className="relative py-32 lg:py-40 overflow-hidden">
       {/* Background Image with Parallax and Zoom */}
       <div
         className="absolute inset-0 z-0"
@@ -37,19 +37,19 @@ export default function ContactSection() {
         <img
           src="https://images.pexels.com/photos/544965/pexels-photo-544965.jpeg"
           alt="Contact background"
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-30"
         />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/75 to-black/85" />
+        {/* Warm overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-italian-navy/85 via-italian-taupe/75 to-italian-navy/85" />
       </div>
 
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6"
-          style={{ fontFamily: 'var(--font-italiana)' }}
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-br from-italian-navy via-italian-taupe to-italian-terracotta bg-clip-text text-transparent mb-8 tracking-wide"
+          style={{ fontFamily: 'var(--font-italiana)', letterSpacing: '0.02em', lineHeight: '1.3' }}
         >
           Start Your Project Today
         </motion.h2>
@@ -58,7 +58,8 @@ export default function ContactSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg sm:text-xl text-gray-200 mb-12 max-w-2xl mx-auto leading-relaxed"
+          className="text-xl sm:text-2xl md:text-3xl text-italian-taupe mb-16 max-w-4xl mx-auto"
+          style={{ lineHeight: '1.7' }}
         >
           Ready to bring your construction vision to life? Our team of experts
           is here to help you every step of the way. Let's build something
@@ -72,9 +73,9 @@ export default function ContactSection() {
         >
           <Link
             href="/contact"
-            className="inline-flex items-center space-x-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:from-amber-600 hover:to-orange-700 hover:scale-105 hover:shadow-2xl group"
+            className="inline-flex items-center space-x-4 bg-italian-terracotta hover:bg-italian-ochre text-white px-10 py-4 rounded-sm text-xl font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group"
           >
-            <span>Get In Touch</span>
+            <span className="tracking-wide">Get In Touch</span>
             <ArrowRight
               className="transition-transform duration-300 group-hover:translate-x-1"
               size={24}
