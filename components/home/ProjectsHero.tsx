@@ -24,7 +24,7 @@ export default function ProjectsHero() {
   }, []);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-100">
+    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden py-32 lg:py-40">
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -32,7 +32,7 @@ export default function ProjectsHero() {
           willChange: 'transform',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/60 z-10 -mt-100" />
+        <div className="absolute inset-0 bg-gradient-to-t from-italian-navy/60 via-italian-taupe/40 to-italian-cream/50 z-10" />
         <video
           autoPlay
           loop
@@ -49,8 +49,8 @@ export default function ProjectsHero() {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6"
-          style={{ fontFamily: 'var(--font-italiana)' }}
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-wide bg-gradient-to-br from-italian-navy via-italian-taupe to-italian-terracotta bg-clip-text text-transparent"
+          style={{ fontFamily: 'var(--font-italiana)', letterSpacing: '0.02em', lineHeight: '1.3' }}
         >
           Our Portfolio of Excellence
         </motion.h2>
@@ -59,7 +59,8 @@ export default function ProjectsHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
-          className="text-lg sm:text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed"
+          className="text-xl sm:text-2xl md:text-3xl text-white/95 mb-12 max-w-4xl mx-auto"
+          style={{ lineHeight: '1.7' }}
         >
           Discover the landmarks we've built, the communities we've shaped, and
           the futures we've constructed across diverse sectors
@@ -72,12 +73,12 @@ export default function ProjectsHero() {
         >
           <Link
             href="/projects"
-            className="inline-flex items-center space-x-3 group"
+            className="inline-flex items-center space-x-4 group"
           >
-            <span className="text-white text-lg font-medium">
+            <span className="text-white text-xl font-medium tracking-wide">
               View Our Projects
             </span>
-            <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-white/20 group-hover:scale-110">
+            <div className="w-14 h-14 rounded-full bg-italian-terracotta/80 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-italian-terracotta group-hover:scale-110 group-hover:shadow-lg group-hover:-translate-y-1">
               <ArrowRight className="text-white" size={24} />
             </div>
           </Link>
