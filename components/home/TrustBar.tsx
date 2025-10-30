@@ -57,25 +57,23 @@ function AnimatedStat({ icon, value, suffix, label, delay }: StatProps) {
       transition={{ duration: 0.6, delay: delay / 1000 }}
       className="flex flex-col items-center text-center group"
     >
-      <div className="p-4 rounded-full bg-gradient-to-br from-amber-500/20 to-orange-600/20 group-hover:from-amber-500/30 group-hover:to-orange-600/30 transition-all duration-300">
-        <div className="text-amber-500 group-hover:scale-110 transition-transform duration-300">
+      <div className="p-4 rounded-full bg-gradient-to-br from-italian-terracotta/20 to-italian-ochre/20 group-hover:from-italian-terracotta/30 group-hover:to-italian-ochre/30 transition-all duration-300">
+        <div className="text-italian-terracotta group-hover:scale-110 transition-transform duration-300">
           {icon}
         </div>
       </div>
-      <div className="text-4xl sm:text-5xl font-black text-white mb-2">
+      <div className="text-5xl sm:text-6xl font-normal text-italian-navy mb-2">
         <span
           style={{
-            background: 'linear-gradient(135deg, #000000 0%, #f59e0b 5%)',
             WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
-            color: 'white',
+            color: '#000080',
           }}
         >
           {count}{suffix}
         </span>
       </div>
-      <div className="text-sm sm:text-base font-semibold text-gray-400 uppercase tracking-wide">
+      <div className="text-sm sm:text-base font-semibold text-italian-taupe uppercase tracking-wide">
         {label}
       </div>
     </motion.div>
@@ -128,7 +126,7 @@ export default function TrustBar() {
   ];
 
   return (
-    <section ref={ref} className="relative py-16 sm:py-20 overflow-hidden">
+    <section ref={ref} className="relative py-32 lg:py-40 overflow-hidden bg-italian-cream">
       {/* Background Image with Parallax and Zoom */}
       <div
         className="absolute inset-0 z-0"
@@ -140,16 +138,16 @@ export default function TrustBar() {
         <img
           src="https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg"
           alt="Construction background"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-20"
         />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-gray-900/90 to-black/85" />
+        {/* Warm overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-italian-cream/90 via-italian-beige/85 to-italian-cream/90" />
       </div>
 
       {/* Decorative background elements */}
-      <div className="absolute inset-0 opacity-20 z-10">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 opacity-10 z-10">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-italian-terracotta rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-italian-ochre rounded-full blur-3xl" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
@@ -159,21 +157,21 @@ export default function TrustBar() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 
-            className="text-3xl sm:text-4xl font-bold text-white mb-3"
-            style={{ fontFamily: 'var(--font-italiana)' }}
+          <h2
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-italian-navy mb-4 tracking-wide"
+            style={{ fontFamily: 'var(--font-italiana)', letterSpacing: '0.02em', lineHeight: '1.3' }}
           >
             Building Trust Since 1995
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl sm:text-2xl text-italian-taupe max-w-3xl mx-auto" style={{ lineHeight: '1.7' }}>
             Three decades of craftsmanship, one foundation of trust
           </p>
         </motion.div>
 
         {/* Stats grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {stats.map((stat, index) => (
             <AnimatedStat
               key={stat.label}
@@ -192,7 +190,7 @@ export default function TrustBar() {
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="mt-12 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent origin-center"
+          className="mt-16 h-1 bg-gradient-to-r from-transparent via-italian-terracotta to-transparent origin-center"
         />
       </div>
     </section>
