@@ -59,9 +59,13 @@ export default function HeroSection() {
         }}
       >
         <div className="absolute inset-0 bg-black/50 z-10" />
-        <img
-          src="https://images.pexels.com/photos/194096/pexels-photo-194096.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="Construction site"
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          src="https://www.pexels.com/download/video/1197802/?auto=compress&cs=tinysrgb&w=1920"
+          title="Construction site"
           className="w-full h-full object-cover scale-110"
         />
       </div>

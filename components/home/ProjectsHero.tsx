@@ -33,9 +33,13 @@ export default function ProjectsHero() {
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/60 z-10 -mt-100" />
-        <img
-          src="https://images.pexels.com/photos/51325/industry-sunset-port-facility-mood-51325.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="Construction projects"
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          src="https://www.pexels.com/download/video/5567711/?auto=compress&cs=tinysrgb&w=1920"
+          title="Construction projects"
           className="w-full h-full object-cover scale-110"
         />
       </div>
