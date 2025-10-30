@@ -163,7 +163,7 @@ export default function TrustBar() {
         >
           <h2 
             className="text-3xl sm:text-4xl font-bold text-white mb-3"
-            style={{ fontFamily: 'var(--font-playfair)' }}
+            style={{ fontFamily: 'var(--font-italiana)' }}
           >
             Building Trust Since 1995
           </h2>

@@ -93,7 +93,7 @@ export default function ContactPage() {
             animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
-            style={{ fontFamily: 'var(--font-playfair)' }}
+            style={{ fontFamily: 'var(--font-italiana)' }}
           >
             Let's Build Together
           </motion.h1>
@@ -135,7 +135,7 @@ export default function ContactPage() {
             <h2
               className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
               style={{
-                fontFamily: 'var(--font-playfair)',
+                fontFamily: 'var(--font-italiana)',
                 background: 'linear-gradient(135deg, #1f2937 0%, #f59e0b 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -158,7 +158,7 @@ export default function ContactPage() {
             >
               <h2
                 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6"
-                style={{ fontFamily: 'var(--font-playfair)' }}
+                style={{ fontFamily: 'var(--font-italiana)' }}
               >
                 Send Us a Message
               </h2>
@@ -286,7 +286,7 @@ export default function ContactPage() {
               <div>
                 <h2
                   className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6"
-                  style={{ fontFamily: 'var(--font-playfair)' }}
+                  style={{ fontFamily: 'var(--font-italiana)' }}
                 >
                   Contact Information
                 </h2>

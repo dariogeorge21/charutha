@@ -81,7 +81,7 @@ export default function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
         className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight text-left"
-        style={{ fontFamily: 'var(--font-playfair)' }}
+        style={{ fontFamily: 'var(--font-italiana)' }}
           >
         Building Tomorrow's Infrastructure Today
           </motion.h1>

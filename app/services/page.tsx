@@ -155,7 +155,7 @@ export default function ServicesPage() {
             animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
-            style={{ fontFamily: 'var(--font-playfair)' }}
+            style={{ fontFamily: 'var(--font-italiana)' }}
           >
             Comprehensive Construction Solutions
           </motion.h1>
@@ -181,7 +181,7 @@ export default function ServicesPage() {
           >
             <h2
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4"
-              style={{ fontFamily: 'var(--font-playfair)' }}
+              style={{ fontFamily: 'var(--font-italiana)' }}
             >
               Our Services
             </h2>
@@ -243,7 +243,7 @@ export default function ServicesPage() {
           >
             <h2
               className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
-              style={{ fontFamily: 'var(--font-playfair)' }}
+              style={{ fontFamily: 'var(--font-italiana)' }}
             >
               Our Process
             </h2>
@@ -279,7 +279,7 @@ export default function ServicesPage() {
             animate={ctaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-            style={{ fontFamily: 'var(--font-playfair)' }}
+            style={{ fontFamily: 'var(--font-italiana)' }}
           >
             Ready to Get Started?
           </motion.h2>

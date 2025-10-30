@@ -185,7 +185,7 @@ export default function Navigation() {
                     onClick={() => setIsOpen(false)}
                     className="text-4xl sm:text-5xl font-bold tracking-tighter text-white hover:text-amber-500 transition-colors duration-300"
                     style={{ 
-                      fontFamily: 'var(--font-playfair)',
+                      fontFamily: 'var(--font-italiana)',
                       fontWeight: 900,
                       letterSpacing: '-0.02em'
                     }}
@@ -194,7 +194,7 @@ export default function Navigation() {
                   </Link>
                   <span
                     className="text-xs font-light tracking-[0.2em] text-white/80 self-end mt-1"
-                    style={{ fontFamily: 'var(--font-playfair)' }}
+                    style={{ fontFamily: 'var(--font-italiana)' }}
                   >
                     ESTD 1995
                   </span>

@@ -127,7 +127,7 @@ export default function ProjectGallery() {
 						animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
 						transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
 						className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-br from-white via-gray-100 to-amber-100 bg-clip-text text-transparent"
-						style={{ fontFamily: 'var(--font-playfair)' }}
+						style={{ fontFamily: 'var(--font-italiana)' }}
 					>
 						Featured Projects
 					</motion.h2>
@@ -243,7 +243,7 @@ export default function ProjectGallery() {
 										{/* Title with Smooth Reveal */}
 										<motion.h3
 											className="text-2xl md:text-3xl font-bold text-white mb-3"
-											style={{ fontFamily: 'var(--font-playfair)' }}
+											style={{ fontFamily: 'var(--font-italiana)' }}
 											animate={{
 												y: isHovered ? -8 : 0,
 											}}

@@ -118,7 +118,7 @@ export default function Footer() {
                   <h3 
                     className="text-4xl sm:text-5xl font-bold tracking-tighter text-white group-hover:text-amber-500 transition-colors duration-300"
                     style={{ 
-                      fontFamily: 'var(--font-playfair)',
+                      fontFamily: 'var(--font-italiana)',
                       fontWeight: 900,
                       letterSpacing: '-0.02em'
                     }}
@@ -127,7 +127,7 @@ export default function Footer() {
                   </h3>
                   <span
                     className="text-xs font-light tracking-[0.2em] text-white/60 self-end mt-1"
-                    style={{ fontFamily: 'var(--font-playfair)' }}
+                    style={{ fontFamily: 'var(--font-italiana)' }}
                   >
                     ESTD 1995
                   </span>
@@ -292,7 +292,7 @@ export default function Footer() {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="mt-8 text-center"
         >
-          <p className="text-gray-600 text-xs italic" style={{ fontFamily: 'var(--font-playfair)' }}>
+          <p className="text-gray-600 text-xs italic" style={{ fontFamily: 'var(--font-italiana)' }}>
             Building Dreams. Delivering Excellence. Creating Legacy.
           </p>
         </motion.div>

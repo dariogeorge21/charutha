@@ -102,7 +102,7 @@ export default function AboutPage() {
             animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
-            style={{ fontFamily: 'var(--font-playfair)' }}
+            style={{ fontFamily: 'var(--font-italiana)' }}
           >
             Building Excellence Since 1985
           </motion.h1>
@@ -129,7 +129,7 @@ export default function AboutPage() {
             >
               <h2
                 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-                style={{ fontFamily: 'var(--font-playfair)' }}
+                style={{ fontFamily: 'var(--font-italiana)' }}
               >
                 Our Mission
               </h2>
@@ -172,7 +172,7 @@ export default function AboutPage() {
           >
             <h2
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4"
-              style={{ fontFamily: 'var(--font-playfair)' }}
+              style={{ fontFamily: 'var(--font-italiana)' }}
             >
               Our Core Values
             </h2>
@@ -213,7 +213,7 @@ export default function AboutPage() {
           >
             <h2
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4"
-              style={{ fontFamily: 'var(--font-playfair)' }}
+              style={{ fontFamily: 'var(--font-italiana)' }}
             >
               Meet Our Leadership
             </h2>

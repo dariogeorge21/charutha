@@ -9,7 +9,7 @@ const SubHeader = () => {
           href="/"
           className="text-xl sm:text-6xl font-bold tracking-tighter transition-colors duration-300 text-white"
           style={{ 
-            fontFamily: 'var(--font-playfair)',
+            fontFamily: 'var(--font-italiana)',
             fontWeight: 900,
             letterSpacing: '-0.02em'
           }}
@@ -18,7 +18,7 @@ const SubHeader = () => {
         </Link>
         <span
           className="text-[0.5rem] sm:text-xs font-light tracking-[0.2em] transition-colors duration-300 self-end text-white/80"
-          style={{ fontFamily: 'var(--font-playfair)' }}
+          style={{ fontFamily: 'var(--font-italiana)' }}
         >
           ESTD 1995
         </span>

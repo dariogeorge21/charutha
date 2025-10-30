@@ -50,7 +50,7 @@ export default function ServicesHero() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6"
-          style={{ fontFamily: 'var(--font-playfair)' }}
+          style={{ fontFamily: 'var(--font-italiana)' }}
         >
           Comprehensive Construction Solutions
         </motion.h2>
