@@ -49,7 +49,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
       <div
         className="absolute inset-0 z-0"
@@ -70,11 +70,11 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="absolute top-8 left-8 z-20">
+      <div className="absolute top-4 left-4 sm:top-8 sm:left-8 z-20">
         <SubHeader />
       </div>
 
-      <div className="relative z-20 px-4 sm:px-6 lg:px-8 max-w-9xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-32 items-center">
+      <div className="relative z-20 px-4 sm:px-6 lg:px-8 max-w-9xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-32 items-center pt-24 sm:pt-0">
         <div className="lg:col-span-2">
           <motion.h2
         initial={{ opacity: 0, y: 30 }}
