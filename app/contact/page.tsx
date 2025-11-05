@@ -81,7 +81,7 @@ export default function ContactPage() {
         >
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
-            src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            src="https://images.pexels.com/photos/3862135/pexels-photo-3862135.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="Contact us"
             className="w-full h-full object-cover"
           />
@@ -348,7 +348,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-gray-900 text-white rounded-lg">
+              <div className="mt-8 p-6 text-white rounded-lg">
                 <h3 className="text-xl font-bold mb-2">Business Hours</h3>
                 <div className="space-y-2 text-white/80">
                   <p>Monday - Friday: 8:00 AM - 6:00 PM</p>

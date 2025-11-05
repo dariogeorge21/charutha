@@ -99,7 +99,7 @@ export default function NewsPage() {
         >
           <div className="absolute inset-0 bg-black/60 z-10" />
           <img
-            src="https://images.pexels.com/photos/3862627/pexels-photo-3862627.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            src="https://images.pexels.com/photos/940362/pexels-photo-940362.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="News and updates"
             className="w-full h-full object-cover scale-110"
           />
