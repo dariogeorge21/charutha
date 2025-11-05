@@ -27,7 +27,7 @@ export default function Navigation() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      setHasScrolled(currentScrollY > 1500);
+      setHasScrolled(currentScrollY > 960);
 
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
