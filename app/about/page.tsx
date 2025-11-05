@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { Award, Users, Target, TrendingUp } from 'lucide-react';
 import Footer from '@/components/Footer';
+import SubHeader from '@/components/SubHeader';
 
 const team = [
   {
@@ -80,6 +81,9 @@ export default function AboutPage() {
 
   return (
     <main>
+      <div className="absolute top-4 left-4 sm:top-8 sm:left-8 z-20">
+        <SubHeader />
+      </div>
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 z-0"
