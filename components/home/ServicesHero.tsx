@@ -32,7 +32,8 @@ export default function ServicesHero() {
           willChange: 'transform',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-italian-cream/40 via-italian-taupe/30 to-italian-navy/50 z-10 group-hover:from-italian-cream/30 group-hover:to-italian-navy/40 transition-all duration-700" />
+        {/* Black fallback background for when video is loading or fails */}
+        <div className="absolute inset-0 bg-black z-0" />
         <video
           autoPlay
           loop
@@ -40,8 +41,9 @@ export default function ServicesHero() {
           playsInline
           src="https://www.pexels.com/download/video/2274600/?auto=compress&cs=tinysrgb&w=1920"
           title="Construction services"
-          className="w-full h-full object-cover scale-110 group-hover:scale-115 transition-transform duration-700 ease-out"
+          className="w-full h-full object-cover scale-110 group-hover:scale-115 transition-transform duration-700 ease-out z-5"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-italian-cream/40 via-italian-taupe/30 to-italian-navy/50 z-10 group-hover:from-italian-cream/30 group-hover:to-italian-navy/40 transition-all duration-700" />
       </div>
 
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
