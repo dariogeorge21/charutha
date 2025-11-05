@@ -58,7 +58,8 @@ export default function HeroSection() {
           willChange: 'transform',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-italian-taupe/30 to-italian-navy/50 z-10" />
+        {/* Black fallback background for when video is loading or fails */}
+        <div className="absolute inset-0 bg-black z-0" />
         <video
           autoPlay
           loop
@@ -66,8 +67,9 @@ export default function HeroSection() {
           playsInline
           src="https://www.pexels.com/download/video/2835995/?auto=compress&cs=tinysrgb&w=1920"
           title="Construction site"
-          className="w-full h-full object-cover scale-110"
+          className="w-full h-full object-cover scale-110 z-5"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-italian-taupe/30 to-italian-navy/50 z-10" />
       </div>
 
       <div className="absolute top-4 left-4 sm:top-8 sm:left-8 z-20">
