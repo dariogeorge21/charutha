@@ -168,7 +168,7 @@ export default function AboutPage() {
                 className="w-full h-full"
               >
                 <img
-                  src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src="https://images.pexels.com/photos/783966/pexels-photo-783966.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Our mission"
                   className="w-full h-full object-cover"
                 />
