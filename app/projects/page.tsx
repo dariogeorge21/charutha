@@ -104,19 +104,15 @@ export default function ProjectsPage() {
   const [heroScrollY, setHeroScrollY] = useState(0);
   const [projectsScrollY, setProjectsScrollY] = useState(0);
 
-  // Scroll effects for hero and projects sections
+  // Hero section parallax effect (like landing page HeroSection and careers page)
   useEffect(() => {
     const handleScroll = () => {
-      if (heroRef.current) {
-        const heroRect = (heroRef.current as HTMLElement).getBoundingClientRect();
-        const heroProgress = Math.max(0, Math.min(1, 1 - heroRect.top / window.innerHeight));
-        setHeroScrollY(heroProgress);
-      }
+      setHeroScrollY(window.scrollY);
 
       if (projectsRef.current) {
-        const projectsRect = (projectsRef.current as HTMLElement).getBoundingClientRect();
-        const projectsProgress = Math.max(0, Math.min(1, 1 - projectsRect.top / window.innerHeight));
-        setProjectsScrollY(projectsProgress);
+        const rect = (projectsRef.current as HTMLElement).getBoundingClientRect();
+        const scrollProgress = Math.max(0, Math.min(1, 1 - rect.top / window.innerHeight));
+        setProjectsScrollY(scrollProgress);
       }
     };
 
@@ -138,7 +134,7 @@ export default function ProjectsPage() {
         <div
           className="absolute inset-0 z-0"
           style={{
-            transform: `scale(${1 + heroScrollY * 0.1})`,
+            transform: `translateY(${heroScrollY * 0.5}px)`,
             willChange: 'transform',
           }}
         >
@@ -146,7 +142,7 @@ export default function ProjectsPage() {
           <img
             src="https://images.pexels.com/photos/3680959/pexels-photo-3680959.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="Our projects"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-110"
           />
         </div>
 
