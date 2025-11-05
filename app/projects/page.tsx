@@ -3,6 +3,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import Footer from '@/components/Footer';
+import SubHeader from '@/components/SubHeader';
 
 const categories = ['All', 'Commercial', 'Residential', 'Infrastructure', 'Industrial'];
 
@@ -130,6 +131,9 @@ export default function ProjectsPage() {
 
   return (
     <main>
+      <div className="absolute top-4 left-4 sm:top-8 sm:left-8 z-20">
+        <SubHeader />
+      </div>
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 z-0"
@@ -168,7 +172,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section ref={filterRef} className="py-12 bg-white relative top-16 lg:top-20 z-30 shadow-md">
+      <section ref={filterRef} className="py-12 bg-white relative z-30 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

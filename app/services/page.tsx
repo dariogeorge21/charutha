@@ -14,6 +14,8 @@ import {
 } from 'lucide-react';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import SubHeader from '@/components/SubHeader';
+
 
 const services = [
   {
@@ -133,7 +135,11 @@ export default function ServicesPage() {
 
   return (
     <main>
+      <div className="absolute top-4 left-4 sm:top-8 sm:left-8 z-20">
+        <SubHeader />
+      </div>
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
+        
         <div
           className="absolute inset-0 z-0"
           style={{
