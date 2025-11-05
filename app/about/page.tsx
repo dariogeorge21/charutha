@@ -64,14 +64,17 @@ export default function AboutPage() {
   const teamInView = useInView(teamRef, { once: true, margin: '-100px' });
 
   const [heroScrollY, setHeroScrollY] = useState(0);
+  const [missionScrollY, setMissionScrollY] = useState(0);
 
-  // Hero section scroll effect
+  // Hero section parallax effect (like landing page HeroSection and careers page)
   useEffect(() => {
     const handleScroll = () => {
-      if (heroRef.current) {
-        const rect = (heroRef.current as HTMLElement).getBoundingClientRect();
+      setHeroScrollY(window.scrollY);
+
+      if (missionRef.current) {
+        const rect = (missionRef.current as HTMLElement).getBoundingClientRect();
         const scrollProgress = Math.max(0, Math.min(1, 1 - rect.top / window.innerHeight));
-        setHeroScrollY(scrollProgress);
+        setMissionScrollY(scrollProgress);
       }
     };
 
@@ -88,7 +91,7 @@ export default function AboutPage() {
         <div
           className="absolute inset-0 z-0"
           style={{
-            transform: `scale(${1 + heroScrollY * 0.1})`,
+            transform: `translateY(${heroScrollY * 0.5}px)`,
             willChange: 'transform',
           }}
         >
@@ -96,7 +99,7 @@ export default function AboutPage() {
           <img
             src="https://images.pexels.com/photos/3862627/pexels-photo-3862627.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="About Charutha"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-110"
           />
         </div>
 
@@ -156,11 +159,20 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden"
             >
-              <img
-                src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Our mission"
-                className="w-full h-full object-cover"
-              />
+              <div
+                style={{
+                  transform: `scale(${1 + missionScrollY * 0.1})`,
+                  willChange: 'transform',
+                  transition: 'transform 0.1s ease-out',
+                }}
+                className="w-full h-full"
+              >
+                <img
+                  src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Our mission"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
