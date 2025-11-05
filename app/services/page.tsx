@@ -113,19 +113,15 @@ export default function ServicesPage() {
   const [heroScrollY, setHeroScrollY] = useState(0);
   const [processScrollY, setProcessScrollY] = useState(0);
 
-  // Scroll effects for hero and process sections
+  // Hero section parallax effect (like landing page HeroSection and careers page)
   useEffect(() => {
     const handleScroll = () => {
-      if (heroRef.current) {
-        const heroRect = (heroRef.current as HTMLElement).getBoundingClientRect();
-        const heroProgress = Math.max(0, Math.min(1, 1 - heroRect.top / window.innerHeight));
-        setHeroScrollY(heroProgress);
-      }
+      setHeroScrollY(window.scrollY);
 
       if (processRef.current) {
-        const processRect = (processRef.current as HTMLElement).getBoundingClientRect();
-        const processProgress = Math.max(0, Math.min(1, 1 - processRect.top / window.innerHeight));
-        setProcessScrollY(processProgress);
+        const rect = (processRef.current as HTMLElement).getBoundingClientRect();
+        const scrollProgress = Math.max(0, Math.min(1, 1 - rect.top / window.innerHeight));
+        setProcessScrollY(scrollProgress);
       }
     };
 
@@ -143,7 +139,7 @@ export default function ServicesPage() {
         <div
           className="absolute inset-0 z-0"
           style={{
-            transform: `scale(${1 + heroScrollY * 0.1})`,
+            transform: `translateY(${heroScrollY * 0.5}px)`,
             willChange: 'transform',
           }}
         >
@@ -151,7 +147,7 @@ export default function ServicesPage() {
           <img
             src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="Our services"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-110"
           />
         </div>
 
