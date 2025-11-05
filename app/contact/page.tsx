@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import Footer from '@/components/Footer';
+import SubHeader from '@/components/SubHeader';
 
 export default function ContactPage() {
   const heroRef = useRef(null);
@@ -15,14 +16,17 @@ export default function ContactPage() {
   const infoInView = useInView(infoRef, { once: true, margin: '-100px' });
 
   const [heroScrollY, setHeroScrollY] = useState(0);
+  const [formScrollY, setFormScrollY] = useState(0);
 
-  // Hero section scroll effect
+  // Hero section parallax effect (like landing page HeroSection)
   useEffect(() => {
     const handleScroll = () => {
-      if (heroRef.current) {
-        const rect = (heroRef.current as HTMLElement).getBoundingClientRect();
+      setHeroScrollY(window.scrollY);
+
+      if (formRef.current) {
+        const rect = (formRef.current as HTMLElement).getBoundingClientRect();
         const scrollProgress = Math.max(0, Math.min(1, 1 - rect.top / window.innerHeight));
-        setHeroScrollY(scrollProgress);
+        setFormScrollY(scrollProgress);
       }
     };
 
@@ -69,21 +73,25 @@ export default function ContactPage() {
     }, 5000);
   };
 
+
   return (
     <main>
+      <div className="absolute top-4 left-4 sm:top-8 sm:left-8 z-20">
+        <SubHeader />
+      </div>
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 z-0"
           style={{
-            transform: `scale(${1 + heroScrollY * 0.1})`,
+            transform: `translateY(${heroScrollY * 0.5}px)`,
             willChange: 'transform',
           }}
         >
-          <div className="absolute inset-0 bg-black/60 z-10" />
+          <div className="absolute inset-0 bg-black/50 z-10" />
           <img
             src="https://images.pexels.com/photos/3862135/pexels-photo-3862135.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="Contact us"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-110"
           />
         </div>
 
@@ -348,9 +356,9 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="mt-8 p-6 text-white rounded-lg">
-                <h3 className="text-xl font-bold mb-2">Business Hours</h3>
-                <div className="space-y-2 text-white/80">
+              <div className="mt-8 p-6 bg-gray-50 rounded-lg">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Business Hours</h3>
+                <div className="space-y-2 text-gray-600">
                   <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
                   <p>Saturday: 9:00 AM - 4:00 PM</p>
                   <p>Sunday: Closed</p>
