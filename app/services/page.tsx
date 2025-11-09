@@ -236,7 +236,7 @@ export default function ServicesPage() {
           <div className="w-full h-full bg-gradient-to-br from-amber-500 to-orange-600" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-white">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={processInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -244,7 +244,7 @@ export default function ServicesPage() {
             className="text-center mb-16"
           >
             <h2
-              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white"
               style={{ fontFamily: 'var(--font-italiana)' }}
             >
               Our Process
@@ -266,7 +266,7 @@ export default function ServicesPage() {
                 <div className="text-5xl font-bold text-white/20 mb-4">
                   {item.step}
                 </div>
-                <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
+                <h3 className="text-2xl font-bold mb-3 text-white">{item.title}</h3>
                 <p className="text-white/70">{item.description}</p>
               </motion.div>
             ))}
