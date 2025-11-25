@@ -77,7 +77,7 @@ export default function ContactSection() {
         >
           <Link
             href="/contact"
-            className="inline-flex items-center space-x-4 bg-italian-terracotta hover:bg-italian-ochre text-white px-10 py-4 rounded-sm text-xl font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group"
+            className="inline-flex items-center space-x-4 bg-italian-terracotta hover:bg-italian-ochre text-white px-10 py-4 rounded-lg text-xl font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group"
           >
             <span className="tracking-wide">Get In Touch</span>
             <ArrowRight
