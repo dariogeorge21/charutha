@@ -31,10 +31,10 @@ const item = {
 
 export default function PrivacyPage() {
   return (
-    <main className="relative bg-[#FAFAFA]">
+    <main className="relative bg-[#FAFAFA] overflow-hidden">
       {/* Decorative terracotta/ochre orbs */}
       <div className="pointer-events-none select-none absolute -top-24 -left-24 w-80 h-80 rounded-full bg-gradient-to-br from-italian-terracotta/20 to-italian-ochre/20 blur-3xl" />
-      <div className="pointer-events-none select-none absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-gradient-to-br from-italian-ochre/20 to-italian-terracotta/20 blur-3xl" />
+      <div className="pointer-events-none select-none absolute top-1/2 -right-24 w-96 h-96 rounded-full bg-gradient-to-br from-italian-ochre/20 to-italian-terracotta/20 blur-3xl" />
 
       <section className="relative py-20 lg:py-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
